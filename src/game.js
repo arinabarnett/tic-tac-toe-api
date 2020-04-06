@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable no-param-reassign */
 let field = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
 let currentPlayer = 1;
@@ -68,6 +69,9 @@ function makeMove(x, y) {
   }
   const value = [...field[0], ...field[1], ...field[2]];
   handleResult(value);
+  checkForWinner();
+  checkForDraw();
+  switchCurrentPlayer();
 }
 
 function checkForWinner() {
